@@ -1,2 +1,14 @@
 @import "tailwindcss";
 @plugin "daisyui";
+
+@media screen and (max-width:576px){
+  .card{
+    padding-left: 55px;
+  }
+  .card-content{
+    text-align: center;
+  }
+}
+@media screen and (min-width:577px) and (max-width:768px){
+  
+}
