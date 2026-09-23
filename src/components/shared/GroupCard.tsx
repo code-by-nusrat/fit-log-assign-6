@@ -56,9 +56,11 @@ import React from 'react';
 import { FaRegClock } from "react-icons/fa6";
 import { AiFillFire } from "react-icons/ai";
 import { IoIosStarOutline } from "react-icons/io";
+import Link from 'next/link';
 const GroupCard = ({ group }: { group: IGroups }) => {
     return (
-        <div className="w-[350px] border bg-black rounded-2xl">
+        <Link href={`/groups/${group.id}`}>
+        <div className="w-[350px] bg-black border  rounded-2xl">
             <div className="w-[350px] overflow-hidden">
 
                 {/* Image */}
@@ -116,6 +118,7 @@ const GroupCard = ({ group }: { group: IGroups }) => {
                 </div>
             </div>
         </div>
+        </Link>
     );
 };
 

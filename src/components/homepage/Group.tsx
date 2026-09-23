@@ -11,7 +11,7 @@ const Groups = async () => {
     const groupsData = await getGroups()
     console.log(groupsData, "groupsdata")
     return (
-        <div className='bg-black'>
+        <div className=''>
             <div className=' mx-auto w-full px-4 sm:px-6 lg:px-8  flex-col lg:flex-row items-center gap-8 lg:gap-12 pt-10 border '>
                 <h2 className='text-[1.9rem] font-bold card-content text-white'>THE LIBRARY</h2>
                 <p className='text-[1rem]font-thin card-content text-gray-500'>Twelve lifts covering every major muscle group.</p>

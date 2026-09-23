@@ -3,9 +3,10 @@ import Image from "next/image";
 import React from "react";
 import logo from "@/assets/logo.png";
 
+
 const Navbar = () => {
     return (
-        <div className="bg-black">
+        <div className="bg-black sticky top-0 z-50">
             <div className="navbar container mx-auto w-full px-4 sm:px-6 lg:px-8 shadow-sm">
 
                 {/* Navbar Start */}
@@ -13,14 +14,6 @@ const Navbar = () => {
 
                     {/* Mobile Menu */}
                     <div className="dropdown lg:hidden">
-                        <div
-                            tabIndex={0}
-                            role="button"
-                            className="btn btn-ghost btn-sm text-white mr-2"
-                        >
-                            ☰
-                        </div>
-
                         <ul
                             tabIndex={-1}
                             className="menu menu-sm dropdown-content bg-black text-white rounded-box z-10 mt-3 w-44 p-2 shadow"
