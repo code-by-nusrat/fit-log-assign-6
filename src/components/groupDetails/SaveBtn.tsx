@@ -1,0 +1,24 @@
+"use client"
+import GroupsProvider, { GroupsContext } from '@/context/GroupsContext';
+import { IGroups } from '@/Types/groupsType';
+import React, { useContext } from 'react';
+import { toast } from 'react-toastify';
+import { AiFillSave } from "react-icons/ai";
+const SaveBtn = ({group}:{group:IGroups}) => {
+    const {save,setSave}=useContext(GroupsContext)
+    const handleSaveBtn=()=>{
+        console.log('triggered')
+        setSave([...save,group])
+        toast.success(`"${group.name}"Added to Save for later`)
+    }
+    return (
+        <div>
+           <button className="btn w-full rounded-2xl border border-gray-400 bg-black text-white hover:bg-gray-900 sm:w-auto" onClick={()=>handleSaveBtn()}>
+                            <AiFillSave />
+                            Save for later
+                        </button>
+        </div>
+    );
+};
+
+export default SaveBtn;

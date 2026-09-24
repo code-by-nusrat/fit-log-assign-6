@@ -59,8 +59,9 @@ import { IoIosStarOutline } from "react-icons/io";
 import Link from 'next/link';
 const GroupCard = ({ group }: { group: IGroups }) => {
     return (
-        <Link href={`/groups/${group.id}`}>
-        <div className="w-[350px] bg-black border  rounded-2xl">
+        <div>
+        <div className="w-[350px] bg-black rounded-2xl">
+            <Link href={`/groups/${group.id}`}>
             <div className="w-[350px] overflow-hidden">
 
                 {/* Image */}
@@ -115,10 +116,13 @@ const GroupCard = ({ group }: { group: IGroups }) => {
                         <p className='text-[#9CA3AF]'><IoIosStarOutline /></p>
                         <p className='text-[#9CA3AF]'>{group.rating}</p>
                     </div>
+                       
                 </div>
+                
             </div>
+             </Link>       
         </div>
-        </Link>
+        </div>
     );
 };
 
