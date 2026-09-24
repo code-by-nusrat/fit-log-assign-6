@@ -6,11 +6,12 @@ import { FiCalendar } from "react-icons/fi";
 import { toast } from 'react-toastify';
 
 const PlanBtn = ({group}:{group:IGroups}) => {
-    const {plan,setPlan}=useContext(GroupsContext)
+    const {plan,setPlan,addToPlan}=useContext(GroupsContext)
     const handlePlanBtn=()=>{
         console.log('triggered',group)
-        setPlan([...plan,group])
+        // setPlan([...plan,group])
         toast.success(`"${group.name}"Added to todays's plan`)
+        addToPlan(group)
     }
     return (
         <div>

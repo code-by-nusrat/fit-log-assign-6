@@ -3,6 +3,8 @@ import Image from "next/image";
 import React from "react";
 import logo from "@/assets/logo.png";
 import Link from "next/link";
+import WorkOutBtn from "./WorkOutBtn";
+import MyPlanBtn from "./MyPlanBtn";
 
 const Navbar = () => {
     return (
@@ -45,13 +47,9 @@ const Navbar = () => {
                 {/* Desktop / Large Navigation */}
                 <div className="navbar-center hidden lg:flex">
                     <ul className="menu menu-horizontal px-1">
-                        <li className="text-white">
-                            <a>Workouts</a>
-                        </li>
+                        <WorkOutBtn></WorkOutBtn>
 
-                        <li className="text-white">
-                            <Link href='/my-plan'>My Plan</Link>
-                        </li>
+                        <MyPlanBtn></MyPlanBtn>
                     </ul>
                 </div>
 

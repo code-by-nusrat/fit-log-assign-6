@@ -1,51 +1,14 @@
-// 'use client'
-// import SaveBtn from '@/components/groupDetails/SaveBtn';
-// import { GroupsContext } from '@/context/GroupsContext';
-// import React, {useContext } from 'react';
-
-// const PlanPage = () => {
-//     const{planBtn,saveBtn}=useContext(GroupsContext)
-//     console.log(planBtn,SaveBtn)
-//     return (
-//         <div className='container mx-auto'>
-//           <div className='container mx-auto'>
-//                 <h1 className='text-[1.9rem] text-white text-bold'>MY PLAN</h1>
-//                 <p className='text-gray-400 '>Cap of five lifts for today. Finish them, then load more.</p>
-//                  <div className='w-295 border border-white h-30.5 items-center  mt-9 rounded-2xl'>
-//                   <div className='flex justify-between pt-2 mx-3 mt-3'>
-//                     <div>
-//                         <p className='text-gray-400'>Exercises</p>
-//                         <p className='font-bold text-[2.2rem] text-[#CCFF00]'>0</p>
-//                     </div>
-//                     <div>
-//                         <p className='text-gray-400'>Minutes</p>
-//                         <p className='font-bold text-[2.2rem] text-[#CCFF00]'>0</p>
-//                     </div>
-//                     <div>
-//                         <p className='text-gray-400'>Calories</p>
-//                         <p className='font-bold text-[2.2rem] text-[#CCFF00]'>0</p>
-//                     </div>
-//                  </div>
-//                 </div>
-
-//           </div>
-//         </div>
-//     );
-// };
-
-// export default PlanPage;
-
 
 'use client'
-
+import GroupCard from '@/components/shared/GroupCard';
+import GroupNothingCard from '@/components/shared/GroupNothingCard';
+import MyPlanCard from '@/components/shared/MyPlanCard';
 import { GroupsContext } from '@/context/GroupsContext';
+import { IGroups } from '@/Types/groupsType';
 import React, { useContext } from 'react';
 
 const PlanPage = () => {
-    const { planBtn, saveBtn } = useContext(GroupsContext);
-
-    console.log(planBtn, saveBtn);
-
+    const {plan,save } = useContext(GroupsContext);
     return (
         <div className="container mx-auto w-full lg:w-380 px-4 sm:px-6 lg:px-2 mt-8">
             <div className="lg:ml-4 mx-auto">
@@ -105,11 +68,23 @@ const PlanPage = () => {
                 {/* tab-content */}
                 {/* name of each tab group should be unique */}
                 <div className="tabs tabs-box bg-black mt-15" >
-                    <input type="radio" name="my_tabs_1" className="tab text-gray-400 mb-4" aria-label="Today's Plan" />
-                    <div className="tab-content border-base-300 p-6 bg-black text-white">Tab content 1</div>
+                    <input type="radio" name="my_tabs_1" className="tab text-gray-400 mb-4" aria-label={`Today's Plan (${plan.length})`} />
+                    <div className="tab-content border-base-300 p-6 bg-black text-white">
+                        {
+                            plan.length> 0 ? plan.map((group:IGroups,ind:number)=>{
+                                return <MyPlanCard key={ind} group={group}></MyPlanCard>
+                            }) :  <GroupNothingCard></GroupNothingCard>
+                        }
+                    </div>
 
-                    <input type="radio" name="my_tabs_1" className="tab text-gray-400" aria-label="Saved" defaultChecked />
-                    <div className="tab-content bg-black border-gray-900 p-6 text-white">Tab content 2</div>
+                    <input type="radio" name="my_tabs_1" className="tab text-gray-400" aria-label={`Saved (${save.length})`} defaultChecked />
+                    <div className="tab-content bg-black border-gray-900 p-6 text-white">
+                        {
+                            save.length> 0 ? save.map((group:IGroups,ind:number)=>{
+                                return <MyPlanCard key={ind} group={group}></MyPlanCard>
+                            }) :  <GroupNothingCard></GroupNothingCard>
+                        }
+                    </div>
 
                 </div>
 

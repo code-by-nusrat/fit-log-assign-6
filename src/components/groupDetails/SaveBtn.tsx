@@ -5,11 +5,12 @@ import React, { useContext } from 'react';
 import { toast } from 'react-toastify';
 import { AiFillSave } from "react-icons/ai";
 const SaveBtn = ({group}:{group:IGroups}) => {
-    const {save,setSave}=useContext(GroupsContext)
+    const {save,setSave, addToSave}=useContext(GroupsContext)
     const handleSaveBtn=()=>{
         console.log('triggered')
-        setSave([...save,group])
+        // setSave([...save,group])
         toast.success(`"${group.name}"Added to Save for later`)
+        addToSave(group);
     }
     return (
         <div>
