@@ -5,8 +5,8 @@ import bannerpic from "@/assets/banner.png";
 
 const Banner = () => {
     return (
-        <section className="bg-black">
-            <div className="container mx-auto w-full px-4 sm:px-6 lg:px-8 flex flex-col lg:flex-row items-center gap-8 lg:gap-12 pt-10">
+        <section className="bg-black m-9 ">
+            <div className="container mx-auto w-full px-4 sm:px-6 lg:px-8 flex flex-col lg:flex-row items-center gap-8 lg:gap-12 pt-10  rounded-2xl bg-gray-900">
 
                 {/* Left Content */}
                 <div className="w-full lg:w-1/2">

@@ -5,6 +5,8 @@ import logo from "@/assets/logo.png";
 import Link from "next/link";
 import WorkOutBtn from "./WorkOutBtn";
 import MyPlanBtn from "./MyPlanBtn";
+import SetPlanBtn from "./SetPlanBtn";
+import SetSaveBtn from "./SetSaveBtn";
 
 const Navbar = () => {
     return (
@@ -54,22 +56,19 @@ const Navbar = () => {
                 </div>
 
                 {/* Navbar End */}
-                <div className="navbar-end gap-2 sm:gap-4">
-
-                    <p className="text-white text-sm sm:text-base">
+                <div className="navbar-end gap-2 sm:gap-4 ">
+                    <Link href='/my-plan'>
+                    <p className="text-white text-sm sm:text-base px-3 py-1 rounded-3xl bg-gray-900">
                         Plan
-                        <span className="ml-1 sm:ml-3 bg-[#ccff00] px-2 py-0.5 rounded-3xl text-black">
-                            0
-                        </span>
-                    </p>
+                        <SetPlanBtn></SetPlanBtn>
+                    </p></Link>
 
-                    <p className="text-white text-sm sm:text-base">
+                   <Link href='/my-plan'>
+                    <p className="text-white text-sm sm:text-base px-3 py-1 rounded-3xl bg-gray-900">
                         Saved
-                        <span className="ml-1 sm:ml-3 px-2 py-0.5 rounded-3xl border border-[#ccff00]">
-                            0
-                        </span>
+                        <SetSaveBtn></SetSaveBtn>
                     </p>
-
+                </Link>
                 </div>
             </div>
         </div>

@@ -1,12 +1,13 @@
 "use client"
 import { IGroups } from '@/Types/groupsType';
-import React, { createContext, ReactNode, useState } from 'react';
+import React, { createContext, ReactNode, useContext, useState } from 'react';
 export const GroupsContext = createContext({})
 const GroupsProvider = ({ children }: { children: ReactNode }) => {
     const [plan, setPlan] = useState([])
     const [save, setSave] = useState([])
-    const [count, setCount] = useState(Number)
-    const [countSave, setCountSave] = useState(Number)
+    const [count, setCount] = useState(0)
+    const [countSave, setCountSave] = useState(0)
+    const [exercise,setExercise]=useState(0)
 
 // Add to Today's Plan
     const addToPlan = (group: IGroups) => {
@@ -42,7 +43,10 @@ const GroupsProvider = ({ children }: { children: ReactNode }) => {
         setCount,
         countSave, setCountSave,
         addToPlan,
-        addToSave
+        addToSave,
+        exercise,
+        setExercise
+        
     }
     return <GroupsContext.Provider value={sharedDtata}>{children}</GroupsContext.Provider>
 };

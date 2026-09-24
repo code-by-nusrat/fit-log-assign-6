@@ -152,7 +152,7 @@ const GroupDetailsPage = async ({ params }: IGroupDetailsProp) => {
 
                 {/* Image */}
                 <div className="w-full">
-                    <div className="relative mx-auto aspect-[588/735] w-full max-w-[588px] overflow-hidden rounded-2xl">
+                    <div className="relative mx-auto aspect-588/735 w-full max-w-147 overflow-hidden rounded-2xl">
                         <Image
                             src={group.image}
                             alt={group.name}
@@ -179,7 +179,7 @@ const GroupDetailsPage = async ({ params }: IGroupDetailsProp) => {
                     {/* Muscle Groups */}
                     <div className="mt-6">
                         <div className="flex flex-wrap gap-2">
-                            {group.muscleGroups.map((muscle, index) => (
+                            {group.muscleGroups.map((muscle, index:number) => (
                                 <span
                                     key={index}
                                     className="rounded-full bg-[#C2F800] px-3 py-1 text-sm text-black sm:px-4 sm:text-base"
@@ -191,10 +191,10 @@ const GroupDetailsPage = async ({ params }: IGroupDetailsProp) => {
                     </div>
 
                     {/* Workout Information */}
-                    <div className="mt-6">
+                    <div className="mt-6 border px-5 rounded-3xl bg-gray-900">
 
                         {/* Equipment */}
-                        <div className="flex flex-col gap-2 py-4 sm:flex-row sm:items-center sm:justify-between">
+                        <div className="flex flex-col gap-2 py-4 sm:flex-row sm:items-center sm:gap-50">
                             <p className="text-sm text-gray-400">
                                 EQUIPMENT
                             </p>
@@ -214,7 +214,8 @@ const GroupDetailsPage = async ({ params }: IGroupDetailsProp) => {
                         </div>
 
                         {/* Difficulty */}
-                        <div className="flex items-center justify-between py-4">
+                        
+                        <div className="flex items-center gap-52 py-4">
                             <p className="text-sm text-gray-400">
                                 DIFFICULTY
                             </p>
@@ -225,7 +226,7 @@ const GroupDetailsPage = async ({ params }: IGroupDetailsProp) => {
                         </div>
 
                         {/* Sets */}
-                        <div className="flex items-center justify-between py-4">
+                        <div className="flex items-center gap-64 py-4">
                             <p className="text-sm text-gray-400">
                                 SETS
                             </p>
@@ -236,7 +237,7 @@ const GroupDetailsPage = async ({ params }: IGroupDetailsProp) => {
                         </div>
 
                         {/* Reps */}
-                        <div className="flex items-center justify-between  py-4">
+                        <div className="flex items-center gap-63  py-4">
                             <p className="text-sm text-gray-400">
                                 REPS
                             </p>
@@ -247,7 +248,7 @@ const GroupDetailsPage = async ({ params }: IGroupDetailsProp) => {
                         </div>
 
                         {/* Duration */}
-                        <div className="flex items-center justify-between py-4">
+                        <div className="flex items-center gap-55 py-4">
                             <p className="text-sm text-gray-400">
                                 DURATION
                             </p>
@@ -258,7 +259,7 @@ const GroupDetailsPage = async ({ params }: IGroupDetailsProp) => {
                         </div>
 
                         {/* Calories */}
-                        <div className="flex items-center justify-between py-4">
+                        <div className="flex items-center gap-56 py-4">
                             <p className="text-sm text-gray-400">
                                 CALORIES
                             </p>
@@ -269,7 +270,7 @@ const GroupDetailsPage = async ({ params }: IGroupDetailsProp) => {
                         </div>
 
                         {/* Rating */}
-                        <div className="flex items-center justify-between py-4">
+                        <div className="flex items-center gap-58 py-4">
                             <p className="text-sm text-gray-400">
                                 RATING
                             </p>
@@ -279,6 +280,7 @@ const GroupDetailsPage = async ({ params }: IGroupDetailsProp) => {
                             </p>
                         </div>
                     </div>
+                    
 
                     {/* Instructions */}
                     <div className="mt-6">
