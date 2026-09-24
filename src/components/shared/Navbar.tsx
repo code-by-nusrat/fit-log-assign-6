@@ -2,7 +2,7 @@
 import Image from "next/image";
 import React from "react";
 import logo from "@/assets/logo.png";
-
+import Link from "next/link";
 
 const Navbar = () => {
     return (
@@ -22,6 +22,7 @@ const Navbar = () => {
                                 <a>Workouts</a>
                             </li>
                             <li>
+                                
                                 <a>My Plan</a>
                             </li>
                         </ul>
@@ -49,7 +50,7 @@ const Navbar = () => {
                         </li>
 
                         <li className="text-white">
-                            <a>My Plan</a>
+                            <Link href='/my-plan'>My Plan</Link>
                         </li>
                     </ul>
                 </div>

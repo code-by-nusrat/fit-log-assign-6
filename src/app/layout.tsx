@@ -33,8 +33,8 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         <GroupsProvider>
         <Navbar></Navbar>
         {children}
-        <Footer></Footer>
          <ToastContainer />
+        <Footer></Footer>
         </GroupsProvider>
         </body>
     </html>

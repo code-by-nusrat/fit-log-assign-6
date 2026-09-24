@@ -8,7 +8,7 @@ import { toast } from 'react-toastify';
 const PlanBtn = ({group}:{group:IGroups}) => {
     const {plan,setPlan}=useContext(GroupsContext)
     const handlePlanBtn=()=>{
-        console.log('triggered')
+        console.log('triggered',group)
         setPlan([...plan,group])
         toast.success(`"${group.name}"Added to todays's plan`)
     }
