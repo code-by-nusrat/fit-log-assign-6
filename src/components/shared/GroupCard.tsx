@@ -9,9 +9,9 @@ import Link from 'next/link';
 const GroupCard = ({ group }: { group: IGroups }) => {
     return (
         <div>
-        <div className="w-[350px] bg-black rounded-2xl">
+        <div className="w-87.5 bg-black rounded-2xl">
             <Link href={`/groups/${group.id}`}>
-            <div className="w-[350px] overflow-hidden">
+            <div className="w-87.5 overflow-hidden">
 
                 {/* Image */}
                 <Image
@@ -44,7 +44,7 @@ const GroupCard = ({ group }: { group: IGroups }) => {
                     {group.equipment.split(",").map((equipment, index) => (
                         <span
                             key={index}
-                            className="px-3 py-1 text-gray-500 text-sm text-black"
+                            className="px-3 py-1 text-gray-500 text-sm "
                         >
                             {equipment.trim()}
                         </span>

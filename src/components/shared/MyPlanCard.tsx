@@ -108,7 +108,7 @@ const MyPlanCard = ({ group }: { group: IGroups }) => {
                         alt={group.name}
                         width={144}
                         height={80}
-                        className="m-3 h-[65px] w-[90px] rounded-xl object-cover sm:m-4 sm:h-[80px] sm:w-[120px] lg:h-[80px] lg:w-[144px]"
+                        className="m-3 h-16.25 w-22.5 rounded-xl object-cover sm:m-4 sm:h-20 sm:w-30 lg:h-20 lg:w-36"
                     />
                 </div>
 

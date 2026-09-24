@@ -106,7 +106,12 @@ import { IGroups } from "@/Types/groupsType";
 import React, { useContext, useState } from "react";
 
 const PlanPage = () => {
-    const { plan, save } = useContext(GroupsContext);
+    const { plan, save } = useContext(
+        GroupsContext as unknown as React.Context<{
+            plan: IGroups[];
+            save: IGroups[];
+        }>
+    );
 
     // Which tab is currently selected?
     const [activeTab, setActiveTab] = useState<"plan" | "save">("plan");

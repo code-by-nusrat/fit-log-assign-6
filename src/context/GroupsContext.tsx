@@ -1,10 +1,10 @@
 "use client"
 import { IGroups } from '@/Types/groupsType';
-import React, { createContext, ReactNode, useContext, useState } from 'react';
+import React, { createContext, ReactNode, useState } from 'react';
 export const GroupsContext = createContext({})
 const GroupsProvider = ({ children }: { children: ReactNode }) => {
-    const [plan, setPlan] = useState([])
-    const [save, setSave] = useState([])
+    const [plan, setPlan] = useState<IGroups[]>([])
+    const [save, setSave] = useState<IGroups[]>([])
     const [count, setCount] = useState(0)
     const [countSave, setCountSave] = useState(0)
     const [exercise,setExercise]=useState(0)
