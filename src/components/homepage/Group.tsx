@@ -53,11 +53,11 @@ const Groups = async () => {
     const groupsData = await getGroups();
 
     return (
-        <section className="w-full px-4 py-10 sm:px-6 lg:px-8">
+        <section id="library" className="w-full px-4 py-10 sm:px-6 lg:px-8">
             
             {/* Heading */}
             <div className="mx-auto w-full max-w-7xl">
-                <h2 className="text-2xl font-bold text-white sm:text-3xl">
+                <h2 className="text-2xl font-bold text-white sm:text-3xl oswald">
                     THE LIBRARY
                 </h2>
 

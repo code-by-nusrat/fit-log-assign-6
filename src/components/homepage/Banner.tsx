@@ -1,12 +1,14 @@
 
 import Image from "next/image";
 import React from "react";
+import Link from "next/link";
+import { FaDumbbell } from "react-icons/fa6";
 import bannerpic from "@/assets/banner.png";
 
 const Banner = () => {
     return (
-        <section className="bg-black m-9 ">
-            <div className="container mx-auto w-full px-4 sm:px-6 lg:px-8 flex flex-col lg:flex-row items-center gap-8 lg:gap-12 pt-10  rounded-2xl bg-gray-900">
+        <section className="bg-black m-9">
+            <div className="container mx-auto w-full px-4 sm:px-6 lg:px-8 flex flex-col lg:flex-row items-center gap-8 lg:gap-12 pt-10 rounded-2xl bg-gray-900">
 
                 {/* Left Content */}
                 <div className="w-full lg:w-1/2">
@@ -15,7 +17,7 @@ const Banner = () => {
                         WORKOUT LIBRARY
                     </p>
 
-                    <h1 className="text-white text-3xl sm:text-4xl lg:text-[3.5rem] mt-5 font-bold leading-tight">
+                    <h1 className="text-white oswald text-3xl sm:text-4xl lg:text-[3.5rem] mt-5 font-bold leading-tight">
                         TRAIN WITH INTENT. LOG EVERY SET.
                     </h1>
 
@@ -24,9 +26,14 @@ const Banner = () => {
                         lock it into today's plan, and watch the week's work add up.
                     </p>
 
-                    <button className="btn bg-[#C2F800] text-black font-bold mt-8 lg:mt-10 mb-10 lg:mb-25">
+                    {/* Browse Workouts CTA */}
+                    <Link
+                        href="#library"
+                        className="btn bg-[#C2F800] text-black font-bold mt-8 lg:mt-10 mb-10 lg:mb-25"
+                    >
+                        <FaDumbbell />
                         BROWSE WORKOUTS
-                    </button>
+                    </Link>
 
                 </div>
 

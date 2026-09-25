@@ -6,7 +6,7 @@ const GroupNothingCard = () => {
     return (
         <div className="container mx-auto flex h-75 w-full flex-col items-center rounded-2xl border border-gray-700 px-4">
             
-            <h1 className="mt-20 text-center text-xl font-bold sm:mt-24 sm:text-2xl">
+            <h1 className="mt-20 text-center text-xl font-bold sm:mt-24 sm:text-2xl oswald">
                 NOTHING HERE YET
             </h1>
 

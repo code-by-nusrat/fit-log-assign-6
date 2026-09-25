@@ -38,7 +38,7 @@ const GroupCard = ({ group }: { group: IGroups }) => {
                     </div>
                 </div>
                 {/* name */}
-                <h2 className='mt-5 pl-3 text-white font-bold text-[1.5rem]'>{group.name}</h2>
+                <h2 className='oswald mt-5 pl-3 text-white font-bold text-[1.5rem]'>{group.name}</h2>
                 {/* eqipment */}
                 <div className="flex gap-2">
                     {group.equipment.split(",").map((equipment, index) => (

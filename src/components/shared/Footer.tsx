@@ -19,7 +19,7 @@ const Footer = () => {
                             alt="FitLog logo"
                         />
 
-                        <h3 className="text-white font-bold">
+                        <h3 className="text-white font-bold oswald">
                             FITLOG
                         </h3>
                     </div>

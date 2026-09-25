@@ -86,7 +86,7 @@ const NavOPenBtn = () => {
                     alt="logo-pic"
                 />
 
-                <span className="text-lg sm:text-xl text-gray-300 ml-2 sm:ml-3 font-semibold">
+                <span className="oswald text-lg sm:text-xl text-gray-300 ml-2 sm:ml-3 font-semibold">
                     FITLOG
                 </span>
             </button>

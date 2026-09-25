@@ -90,7 +90,7 @@
 import { IGroups } from "@/Types/groupsType";
 import Image from "next/image";
 import React from "react";
-import { FaRegClock, FaCheck } from "react-icons/fa";
+import { FaRegClock } from "react-icons/fa";
 import { HiFire } from "react-icons/hi2";
 import { FaRegStar } from "react-icons/fa";
 import Link from "next/link";
@@ -119,7 +119,7 @@ const MyPlanCard = ({ group,type }: { group: IGroups,type: "plan" | "save"; }) =
                 <div className="min-w-0 flex-1 py-3 pr-2 sm:py-4 lg:py-4">
 
                     {/* Name */}
-                    <h2 className="truncate text-base font-bold sm:text-xl lg:text-2xl">
+                    <h2 className="oswald truncate text-base font-bold sm:text-xl lg:text-2xl">
                         {group.name}
                     </h2>
 

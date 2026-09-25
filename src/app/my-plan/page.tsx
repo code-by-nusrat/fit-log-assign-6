@@ -51,7 +51,7 @@ const PlanPage = () => {
 
                 {/* Heading */}
                 <div>
-                    <h1 className="text-2xl font-bold text-white sm:text-3xl">
+                    <h1 className="oswald text-2xl font-bold text-white sm:text-3xl">
                         MY PLAN
                     </h1>
 
@@ -69,7 +69,7 @@ const PlanPage = () => {
                                 Exercises
                             </p>
 
-                            <p className="mt-1 text-2xl font-bold text-[#CCFF00] sm:text-[2.2rem]">
+                            <p className="oswald mt-1 text-2xl font-bold text-[#CCFF00] sm:text-[2.2rem]">
                                 {exerciseCount}
                             </p>
                         </div>
@@ -79,7 +79,7 @@ const PlanPage = () => {
                                 Minutes
                             </p>
 
-                            <p className="mt-1 text-2xl font-bold text-[#CCFF00] sm:text-[2.2rem]">
+                            <p className="oswald mt-1 text-2xl font-bold text-[#CCFF00] sm:text-[2.2rem]">
                                 {totalMinutes}
                             </p>
                         </div>
@@ -89,7 +89,7 @@ const PlanPage = () => {
                                 Calories
                             </p>
 
-                            <p className="mt-1 text-2xl font-bold text-[#CCFF00] sm:text-[2.2rem]">
+                            <p className="oswald mt-1 text-2xl font-bold text-[#CCFF00] sm:text-[2.2rem]">
                                 {totalCalories}
                             </p>
                         </div>

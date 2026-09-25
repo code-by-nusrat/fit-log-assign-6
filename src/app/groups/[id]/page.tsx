@@ -65,7 +65,7 @@ const GroupDetailsPage = async ({ params }: IGroupDetailsProp) => {
                 <div className="w-full">
 
                     {/* Title */}
-                    <h1 className="mb-3 text-3xl font-bold text-white sm:text-4xl lg:text-[2.4rem]">
+                    <h1 className="oswald mb-3 text-3xl font-bold text-white sm:text-4xl lg:text-[2.4rem]">
                         {group.name}
                     </h1>
 
