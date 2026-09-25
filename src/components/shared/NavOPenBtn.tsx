@@ -66,7 +66,10 @@ import logo from "@/assets/logo.png";
 import { GroupsContext } from "@/context/GroupsContext";
 
 const NavOPenBtn = () => {
-    const { open, setOpen } = useContext(GroupsContext);
+    const { open, setOpen } = useContext(GroupsContext) as {
+        open: boolean;
+        setOpen: (value: boolean) => void;
+    };
 
     return (
         <div className="navbar-start relative">
