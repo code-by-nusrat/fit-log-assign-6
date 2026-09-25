@@ -238,7 +238,7 @@ const PlanPage = () => {
                 </div>
 
                 {/* Stats Card */}
-                <div className="mt-8 min-h-30.5 w-full rounded-2xl border border-white/30 p-4 sm:mt-9 sm:p-5">
+                <div className="mt-8 min-h-30.5 w-full rounded-2xl border bg-gray-900 border-white/30 p-4 sm:mt-9 sm:p-5">
                     <div className="grid grid-cols-3 gap-3 sm:gap-6">
 
                         <div>
