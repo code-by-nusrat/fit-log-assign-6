@@ -104,17 +104,17 @@ const Navbar = () => {
                 </div>
 
                 {/* Navbar End */}
-                <div className="navbar-end gap-2 sm:gap-4">
+                <div className="navbar-end gap-7 sm:gap-4">
 
-                    <Link href="/my-plan">
-                        <p className="text-white text-sm sm:text-base px-3 py-1 rounded-3xl bg-gray-900">
+                    <Link href="/my-plan ">
+                        <p className="text-white text-sm sm:text-base px-3 py-1 rounded-3xl whitespace-nowrap bg-gray-900">
                             Plan
                             <SetPlanBtn />
                         </p>
                     </Link>
 
                     <Link href="/my-plan">
-                        <p className="text-white text-sm sm:text-base px-3 py-1 rounded-3xl bg-gray-900 ml-2 whitespace-nowrap">
+                        <p className="text-white text-sm sm:text-base px-3 py-1 rounded-3xl bg-gray-900 ">
                             Saved
                             <SetSaveBtn />
                         </p>
