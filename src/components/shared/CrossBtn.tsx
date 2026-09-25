@@ -1,47 +1,31 @@
-// import { GroupsContext } from '@/context/GroupsContext';
-// import React, { useContext } from 'react';
-// import { RxCross2 } from "react-icons/rx";
-// const CrossBtn = () => {
-//     const { removeFromPlan,removeFromSave,setPlan} =useContext(GroupsContext)
-//     const removeFromPlans = (id: number) => {
-//     console.log("REMOVE PLAN ID:", id);
-
-//     setPlan((prev) => {
-//         console.log("BEFORE:", prev);
-
-//         const newPlan = prev.filter(
-//             (item) => item.id !== id
-//         );
-
-//         console.log("AFTER:", newPlan);
-
-//         return newPlan;
-//     });
-// };
-//     return (
-//         <button onClick={()=> removeFromPlans()}><RxCross2 />
-//                 </button>
-//     );
-// };
-
-// export default CrossBtn;
-
-
 
 "use client";
 
 import { GroupsContext } from "@/context/GroupsContext";
 import React, { useContext } from "react";
 import { RxCross2 } from "react-icons/rx";
+import { toast } from "react-toastify";
 
-const CrossBtn = ({ id }: { id: number }) => {
-    const { removeFromPlan,removeFromSave } = useContext(GroupsContext);
+const CrossBtn = ({ id ,type}: { id: number,type: "plan" | "save"; }) => {
+    const { removeFromPlan, removeFromSave, setCount, setCountSave } =
+        useContext(GroupsContext) as unknown as {
+            removeFromPlan: (id: number) => void;
+            removeFromSave: (id: number) => void;
+            setCount: React.Dispatch<React.SetStateAction<number>>;
+            setCountSave: React.Dispatch<React.SetStateAction<number>>;
+        };
 
     const handleRemove = () => {
         console.log("Removing ID:", id);
-
-        removeFromPlan(id);
-        removeFromSave(id)
+          if (type === "plan") {
+            removeFromPlan(id);
+            setCount((prev) => prev - 1);
+            toast.success("Removed from today's plan!");
+        } else {
+            removeFromSave(id);
+            setCountSave((prev) => prev - 1);
+            toast.success("Removed from saved!");
+        }
     };
 
     return (

@@ -95,8 +95,9 @@ import { HiFire } from "react-icons/hi2";
 import { FaRegStar } from "react-icons/fa";
 import Link from "next/link";
 import CrossBtn from "./CrossBtn";
+import MarkBtn from "./MarkBtn";
 
-const MyPlanCard = ({ group }: { group: IGroups }) => {
+const MyPlanCard = ({ group,type }: { group: IGroups,type: "plan" | "save"; }) => {
     return (
         <div className="mx-auto mb-4 flex w-full flex-col overflow-hidden rounded-2xl border border-gray-700 lg:flex-row lg:items-center lg:justify-between">
 
@@ -168,14 +169,9 @@ const MyPlanCard = ({ group }: { group: IGroups }) => {
                 </Link>
 
                 {/* Mark as Done */}
-                <button
-                    className="btn h-10 flex-1 rounded-3xl bg-[#CCFF00] px-4 text-xs text-black sm:h-11 sm:text-sm lg:w-40 lg:flex-none"
-                >
-                    <FaCheck />
-                    Mark as Done
-                </button>
+                <MarkBtn group={group}></MarkBtn>
                 {/* cross btn */}
-                <CrossBtn id={group.id}></CrossBtn>
+                <CrossBtn id={group.id} type={type}></CrossBtn>
             </div>
 
 
