@@ -266,7 +266,7 @@ const GroupDetailsPage = async ({ params }: IGroupDetailsProp) => {
 
                 {/* Image */}
                 <div className="w-full">
-                    <div className="relative mx-auto aspect-[588/735] w-full max-w-[588px] overflow-hidden rounded-2xl">
+                    <div className="relative mx-auto aspect-588/735 w-full max-w-147 overflow-hidden rounded-2xl">
                         <Image
                             src={group.image}
                             alt={group.name}

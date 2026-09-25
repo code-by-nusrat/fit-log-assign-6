@@ -1,11 +1,17 @@
 "use client"
-import GroupsProvider, { GroupsContext } from '@/context/GroupsContext';
+import { GroupsContext } from '@/context/GroupsContext';
 import { IGroups } from '@/Types/groupsType';
 import React, { useContext } from 'react';
 import { toast } from 'react-toastify';
 import { AiFillSave } from "react-icons/ai";
 const SaveBtn = ({group}:{group:IGroups}) => {
-    const {save,setSave, addToSave,countSave,setCountSave}=useContext(GroupsContext)
+    const { save, addToSave, setCountSave } = useContext(
+        GroupsContext as unknown as React.Context<{
+            save: IGroups[];
+            addToSave: (group: IGroups) => void;
+            setCountSave: React.Dispatch<React.SetStateAction<number>>;
+        }>
+    );
     const handleSaveBtn=()=>{
         // console.log('triggered')
         // // setSave([...save,group])

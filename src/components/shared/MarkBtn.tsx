@@ -2,7 +2,7 @@
 import React from 'react';
 import { FaCheck } from "react-icons/fa";
 import { toast } from 'react-toastify';
-const MarkBtn = ({group}) => {
+const MarkBtn = ({ group }: { group: { name: string } }) => {
     const toastify=()=>{
         toast.success(`"${group.name}" is marked as done sucessfully`)
     }
