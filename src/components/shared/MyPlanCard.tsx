@@ -73,7 +73,7 @@
 //                 <button className="btn btn-active flex-1 rounded-3xl bg-black text-xs text-white sm:text-sm lg:flex-none">
 //                     View Details
 //                 </button></Link>
-                
+
 //                 <button className="btn flex-1 rounded-3xl bg-[#CCFF00] text-xs sm:text-sm lg:flex-none">
 //                     <FaCheck />
 //                     Mark as Done
@@ -86,6 +86,7 @@
 
 // export default MyPlanCard;
 
+
 import { IGroups } from "@/Types/groupsType";
 import Image from "next/image";
 import React from "react";
@@ -93,6 +94,7 @@ import { FaRegClock, FaCheck } from "react-icons/fa";
 import { HiFire } from "react-icons/hi2";
 import { FaRegStar } from "react-icons/fa";
 import Link from "next/link";
+import CrossBtn from "./CrossBtn";
 
 const MyPlanCard = ({ group }: { group: IGroups }) => {
     return (
@@ -155,7 +157,7 @@ const MyPlanCard = ({ group }: { group: IGroups }) => {
             </div>
 
             {/* Part 2 - Buttons */}
-            <div className="flex w-full gap-2 p-3 sm:p-4 lg:w-auto lg:shrink-0 lg:p-4">
+            <div className="flex w-full gap-2 p-3 sm:p-4 lg:w-auto lg:shrink-0 lg:p-4 items-center">
 
                 {/* View Details */}
                 <Link
@@ -172,8 +174,12 @@ const MyPlanCard = ({ group }: { group: IGroups }) => {
                     <FaCheck />
                     Mark as Done
                 </button>
-
+                {/* cross btn */}
+                <CrossBtn id={group.id}></CrossBtn>
             </div>
+
+
+
         </div>
     );
 };

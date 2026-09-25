@@ -97,6 +97,169 @@
 
 // export default PlanPage;
 
+// "use client";
+
+// import GroupNothingCard from "@/components/shared/GroupNothingCard";
+// import MyPlanCard from "@/components/shared/MyPlanCard";
+// import { GroupsContext } from "@/context/GroupsContext";
+// import { IGroups } from "@/Types/groupsType";
+// import React, { useContext, useState } from "react";
+
+// const PlanPage = () => {
+//     const { plan, save } = useContext(
+//         GroupsContext as unknown as React.Context<{
+//             plan: IGroups[];
+//             save: IGroups[];
+//         }>
+//     );
+
+//     // Which tab is currently selected?
+//     const [activeTab, setActiveTab] = useState<"plan" | "save">("plan");
+
+//     // Get the data of the currently selected tab
+//     const activeItems: IGroups[] =
+//         activeTab === "plan" ? plan : save;
+
+//     // Exercises
+//     const exerciseCount = activeItems.length;
+
+//     // Total minutes
+//     const totalMinutes = activeItems.reduce(
+//         (total, group) => total + Number(group.duration),
+//         0
+//     );
+
+//     // Total calories
+//     const totalCalories = activeItems.reduce(
+//         (total, group) => total + Number(group.caloriesBurned),
+//         0
+//     );
+
+//     return (
+//         <div className="container mx-auto mt-8 w-full px-4 sm:px-6 lg:w-380 lg:px-2">
+
+//             <div className="mx-auto lg:ml-4">
+
+//                 {/* Heading */}
+//                 <div>
+//                     <h1 className="text-2xl font-bold text-white sm:text-3xl">
+//                         MY PLAN
+//                     </h1>
+
+//                     <p className="mt-1 text-sm text-gray-400 sm:text-base">
+//                         Cap of five lifts for today. Finish them, then load more.
+//                     </p>
+//                 </div>
+
+
+//                 {/* ================= Stats Card ================= */}
+//                 <div className="mt-8 min-h-30.5 w-full rounded-2xl border border-white/30 p-4 sm:mt-9 sm:p-5">
+
+//                     <div className="grid grid-cols-3 gap-3 sm:gap-6">
+
+//                         {/* Exercises */}
+//                         <div>
+//                             <p className="text-xs text-gray-400 sm:text-sm">
+//                                 Exercises
+//                             </p>
+
+//                             <p className="mt-1 text-2xl font-bold text-[#CCFF00] sm:text-[2.2rem]">
+//                                 {exerciseCount}
+//                             </p>
+//                         </div>
+
+
+//                         {/* Minutes */}
+//                         <div>
+//                             <p className="text-xs text-gray-400 sm:text-sm">
+//                                 Minutes
+//                             </p>
+
+//                             <p className="mt-1 text-2xl font-bold text-[#CCFF00] sm:text-[2.2rem]">
+//                                 {totalMinutes}
+//                             </p>
+//                         </div>
+
+
+//                         {/* Calories */}
+//                         <div>
+//                             <p className="text-xs text-gray-400 sm:text-sm">
+//                                 Calories
+//                             </p>
+
+//                             <p className="mt-1 text-2xl font-bold text-[#CCFF00] sm:text-[2.2rem]">
+//                                 {totalCalories}
+//                             </p>
+//                         </div>
+
+//                     </div>
+//                 </div>
+
+
+//                 {/* ================= Tabs ================= */}
+//                 <div className="tabs tabs-box mt-15 bg-black">
+
+//                     {/* Today's Plan */}
+//                     <input
+//                         type="radio"
+//                         name="my_tabs_1"
+//                         className="tab mb-4 text-gray-400"
+//                         aria-label={`Today's Plan (${plan.length})`}
+//                         defaultChecked
+//                         onChange={() => setActiveTab("plan")}
+//                     />
+
+//                     <div className="tab-content border-gray-900 bg-black p-6 text-white">
+
+//                         {plan.length > 0 ? (
+//                             plan.map((group: IGroups) => (
+//                                 <MyPlanCard
+//                                     key={group.id}
+//                                     group={group}
+//                                 />
+//                             ))
+//                         ) : (
+//                             <GroupNothingCard />
+//                         )}
+
+//                     </div>
+
+
+//                     {/* Saved */}
+//                     <input
+//                         type="radio"
+//                         name="my_tabs_1"
+//                         className="tab text-gray-400"
+//                         aria-label={`Saved (${save.length})`}
+//                         onChange={() => setActiveTab("save")}
+//                     />
+
+//                     <div className="tab-content border-gray-900 bg-black p-6 text-white">
+
+//                         {save.length > 0 ? (
+//                             save.map((group: IGroups) => (
+//                                 <MyPlanCard
+//                                     key={group.id}
+//                                     group={group}
+//                                 />
+//                             ))
+//                         ) : (
+//                             <GroupNothingCard />
+//                         )}
+
+//                     </div>
+
+//                 </div>
+
+//             </div>
+//         </div>
+//     );
+// };
+
+// export default PlanPage;
+
+
+
 "use client";
 
 import GroupNothingCard from "@/components/shared/GroupNothingCard";
@@ -113,14 +276,14 @@ const PlanPage = () => {
         }>
     );
 
-    // Which tab is currently selected?
+    // Track selected tab
     const [activeTab, setActiveTab] = useState<"plan" | "save">("plan");
 
-    // Get the data of the currently selected tab
+    // Current tab data
     const activeItems: IGroups[] =
         activeTab === "plan" ? plan : save;
 
-    // Exercises
+    // Number of exercises
     const exerciseCount = activeItems.length;
 
     // Total minutes
@@ -131,16 +294,18 @@ const PlanPage = () => {
 
     // Total calories
     const totalCalories = activeItems.reduce(
-        (total, group) => total + Number(group.caloriesBurned),
+        (total, group) =>
+            total + Number(group.caloriesBurned),
         0
     );
+    
 
     return (
         <div className="container mx-auto mt-8 w-full px-4 sm:px-6 lg:w-380 lg:px-2">
 
             <div className="mx-auto lg:ml-4">
 
-                {/* Heading */}
+                {/* ================= Heading ================= */}
                 <div>
                     <h1 className="text-2xl font-bold text-white sm:text-3xl">
                         MY PLAN
@@ -199,7 +364,7 @@ const PlanPage = () => {
                 {/* ================= Tabs ================= */}
                 <div className="tabs tabs-box mt-15 bg-black">
 
-                    {/* Today's Plan */}
+                    {/* ================= Today's Plan ================= */}
                     <input
                         type="radio"
                         name="my_tabs_1"
@@ -216,6 +381,7 @@ const PlanPage = () => {
                                 <MyPlanCard
                                     key={group.id}
                                     group={group}
+                                    type="plan"
                                 />
                             ))
                         ) : (
@@ -225,7 +391,7 @@ const PlanPage = () => {
                     </div>
 
 
-                    {/* Saved */}
+                    {/* ================= Saved ================= */}
                     <input
                         type="radio"
                         name="my_tabs_1"
@@ -241,6 +407,7 @@ const PlanPage = () => {
                                 <MyPlanCard
                                     key={group.id}
                                     group={group}
+                                    type="save"
                                 />
                             ))
                         ) : (

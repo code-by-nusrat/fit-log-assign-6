@@ -33,6 +33,23 @@ const GroupsProvider = ({ children }: { children: ReactNode }) => {
         });
     };
 
+     // Remove from Today's Plan
+    // =========================
+    const removeFromPlan = (id: number) => {
+        setPlan((prev) =>
+            prev.filter((item) => item.id !== id)
+        );
+    };
+
+    // =========================
+    // Remove from Saved
+    // =========================
+    const removeFromSave = (id: number) => {
+        setSave((prev) =>
+            prev.filter((item) => item.id !== id)
+        );
+    };
+
 
     const sharedDtata = {
         plan,
@@ -45,7 +62,9 @@ const GroupsProvider = ({ children }: { children: ReactNode }) => {
         addToPlan,
         addToSave,
         exercise,
-        setExercise
+        setExercise,
+        removeFromPlan,
+        removeFromSave,
         
     }
     return <GroupsContext.Provider value={sharedDtata}>{children}</GroupsContext.Provider>
