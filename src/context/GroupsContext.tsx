@@ -8,6 +8,7 @@ const GroupsProvider = ({ children }: { children: ReactNode }) => {
     const [count, setCount] = useState(0)
     const [countSave, setCountSave] = useState(0)
     const [exercise,setExercise]=useState(0)
+    const [open,setOpen] =useState(false)
 
 // Add to Today's Plan
     const addToPlan = (group: IGroups) => {
@@ -65,7 +66,8 @@ const GroupsProvider = ({ children }: { children: ReactNode }) => {
         setExercise,
         removeFromPlan,
         removeFromSave,
-        
+        open,
+        setOpen
     }
     return <GroupsContext.Provider value={sharedDtata}>{children}</GroupsContext.Provider>
 };
