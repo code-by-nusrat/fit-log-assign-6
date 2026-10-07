@@ -6,7 +6,11 @@ FitLog is a modern fitness and workout planning web application that helps users
 
 Add your deployed project link here:
 
-`https://your-project-url.vercel.app`
+https://fit-log-assign-6.vercel.app
+
+## 💻 GitHub Repository
+https://github.com/code-by-nusrat/fit-log-assign-6
+
 
 ## 📌 Project Description
 
